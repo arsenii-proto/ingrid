@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <!-- Title -->
+    <title>Ингрид | салон красоты</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Meta tags -->
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+
+    <!-- Custom fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Pacifico|Raleway:400,700,900|Pattaya"
+      rel="stylesheet"
+    />
+
+    <!-- Carousel -->
+    <link rel="stylesheet" href="css/slick.css" />
+
+    <!-- Custom Scroll -->
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css" />
+
+    <!-- Theme style -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div id="wrapper">
+      <!-- Header -->
+      <header id="header">
+        <div class="container">
+          <nav class="main-navigation">
+            <strong class="navbar-brand">
+              <a href="index.html">
+                <img
+                  src="images/imageedit_5_5433318588.png"
+                  width="79"
+                  alt="Ингрид | салон красоты"
+                />
+              </a>
+            </strong>
+            <a href="#" class="nav-opener"><span></span></a>
+            <div class="drop-down">
+              <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="#partners">Наши партнеры</a></li>
+                <li><a href="#nails">Ногтевой Сервис</a></li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+      <!-- Title Of Page -->
+      <section class="section screen07 frame-box">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 title-page">
+              <h1>Ногтевой Сервис <span>Уход для рук и ног</span></h1>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Portfolio -->
+      <section class="section portfolio-section">
+        <div class="col-md-12">
+          <h1 style="text-align: center">Маникюр</h1>
+          <br />
+          <br />
+          <br />
+        </div>
+        <div class="col-md-12">
+          <!-- filters buttons -->
+          <nav class="filters-buttons" id="gallery-categories">
+            <button class="btn is-checked" data-group="all">
+              <span>Все</span>
+            </button>
+          </nav>
+          <!-- filter grid -->
+          <div class="filter-grid" id="gallery-items"></div>
+        </div>
+      </section>
+
+      <!-- footer -->
+      <footer id="footer" class="section frame-box">
+        <div class="container footer-box">
+          <div class="row">
+            <div class="col-lg-4 col-md-4">
+              <i class="icon-phone"></i>
+              <div class="holder">
+                <a href="tel:+3(342)123456">+3 (342) 123 456 </a>
+              </div>
+            </div>
+            <div class="col-lg-5 col-md-4">
+              <i class="icon-map-pin"></i>
+              <div class="holder">
+                <address>
+                  Amphitheatre Parkway, Mountain View, CA 94043 United States of
+                  America
+                </address>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-4">
+              <i class="icon-global"></i>
+              <div class="holder">
+                <a href="mailto:company@gmail.com">company@gmail.com</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          id="map"
+          class="map"
+          data-lat="49.8441307"
+          data-lng="24.0251397"
+          data-marker-image="images/logo-map.png"
+          data-marker-width="79"
+          data-marker-height="67"
+          data-title="Creative Studio"
+        ></div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <p>&copy; Copyright 2018 - Creative Studio</p>
+            </div>
+            <div class="col-md-6">
+              <ul class="social-networks">
+                <li>
+                  <a href="#"><span class="icon-facebook"></span></a>
+                </li>
+                <li>
+                  <a href="#"><span class="icon-twitter"></span></a>
+                </li>
+                <li>
+                  <a href="#"><span class="icon-linkedin"></span></a>
+                </li>
+                <li>
+                  <a href="#"><span class="icon-dribbble"></span></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Modal Prices Plan -->
+    <div id="gallery-modals"></div>
+
+    <script>
+      const nailCategories = [
+        {
+          key: "classic",
+          name: "Классический",
+          price: 550,
+          items: []
+        },
+        {
+          key: "hardware",
+          name: "Аппаратный",
+          price: 750,
+          items: []
+        },
+        {
+          key: "combined",
+          name: "Комбинированный",
+          price: 750,
+          items: []
+        },
+        {
+          key: "brazilian",
+          name: "Бразильский",
+          price: 950,
+          items: []
+        },
+        {
+          key: "spa",
+          name: "SPA",
+          price: 95,
+          items: []
+        },
+        {
+          key: "gel",
+          name: "Гелевый - укрепление ногтей гелем",
+          price: 1500,
+          items: []
+        },
+        {
+          key: "french",
+          name: "Гелевый - Френч",
+          price: 2200,
+          items: []
+        },
+        {
+          key: "correction",
+          name: "Коррекция гелевого маникюра",
+          price: 900,
+          items: []
+        },
+        {
+          key: "correction",
+          name: "Коррекция гелевого маникюра - Френч",
+          price: 1300,
+          items: []
+        },
+        {
+          key: "ibx",
+          name: "Укрепление ногтей системой IBX",
+          price: 600,
+          items: []
+        },
+        {
+          key: "biogel",
+          name: "Укрепление ногтей био-гелем",
+          price: 1800,
+          items: []
+        },
+        {
+          key: "biofrench",
+          name: "Укрепление ногтей био-гелем - Френч",
+          price: 2000,
+          items: []
+        },
+        {
+          key: "massage",
+          name: "Массаж рук - 15 минут",
+          price: 250,
+          items: []
+        },
+        {
+          key: "paraffin",
+          name: "Парафинотерапия для рук",
+          price: 450,
+          items: []
+        },
+        {
+          key: "male",
+          name: "Мужской",
+          price: 900,
+          items: []
+        }
+      ].map((v, i) => ({
+        ...v,
+        items: Array.from({ length: 8 }).map((vv, ii) => {
+          const n = i * 8 + (ii + 1);
+
+          return `nails/${((n % 1000) - (n % 100)) / 100}${((n % 100) -
+            (n % 10)) /
+            10}${n % 10}.jpg`;
+        })
+      }));
+
+      const modalsBox = document.querySelector("#gallery-modals");
+      const categoriesBox = document.querySelector("#gallery-categories");
+      const itemsBox = document.querySelector("#gallery-items");
+
+      nailCategories.forEach((category, ci) => {
+        categoriesBox.innerHTML += `<button class="btn" data-group="${
+          category.key
+        }"><span>${category.name}<b class="price"> ${
+          category.price
+        } <i class="glyphicon-ruble"></i> </b></span></button>`;
+
+        category.items.forEach((nail, ni) => {
+          itemsBox.innerHTML += `<div class="box" data-groups='["${
+            category.key
+          }"]' data-target="#nail-${ci}-${ni}" data-toggle="modal"><figure><img src="images/${nail}" alt="#" /></figure><div class="text"><div class="holder"><h3>${
+            category.name
+          }</h3><h3><b> ${
+            category.price
+          } <i class="glyphicon-ruble"></i> </b></h3></p></div></div></div>`;
+
+          modalsBox.innerHTML += `<div class="modal fade" id="nail-${ci}-${ni}" tabindex="-1" role="dialog"><div class="modal-dialog portfolio" role="document"><div class="modal-content"><div class="modal-header" style="padding: 15px;"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div><div class="modal-body"><div class="col-md-12"><img src="images/${nail}" alt="${
+            category.name
+          }" /></div></div></div></div></div>`;
+        });
+      });
+    </script>
+
+    <!-- jQuery -->
+    <script
+      type="text/javascript"
+      src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"
+    ></script>
+    <script type="text/javascript">
+      window.jQuery ||
+        document.write('<script src="js/jquery-3.1.1.min.js"><\/script>');
+    </script>
+
+    <!-- Bootstrap -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- ProgressBar -->
+    <script src="js/progressbar.min.js"></script>
+
+    <!-- Portfolio -->
+    <script src="js/jquery.shuffle.min.js"></script>
+
+    <!-- Carousel -->
+    <script src="js/slick.min.js"></script>
+
+    <!-- Custom Scroll -->
+    <script src="js/jquery.mCustomScrollbar.min.js"></script>
+
+    <!-- Custom Google Map -->
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyAd0n1UX861dRqzyo3DLd_AOfmHXNpw6P0"></script>
+
+    <!-- Custom JS -->
+    <script src="js/jquery.main.min.js"></script>
+  </body>
+</html>
