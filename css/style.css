@@ -10180,11 +10180,12 @@ input[type='button'] {
 @media (max-width: 991px) {
   .partners-list {
     margin: -20px 0;
+    flex-wrap: wrap
   }
   .partners-list li {
     width: auto;
-    margin: 20px 25px;
-    max-width: 30%;
+    margin: 20px 2%;
+    max-width: 44%;
   }
 }
 
